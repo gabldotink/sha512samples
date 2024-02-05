@@ -1,0 +1,7 @@
+SPDX-License-Identifier: CC0-1.0
+
+This file contains SHA-512 hash collisions that have been
+found in this repository. The hashes are included below so
+that the Git history can be checked. Finding a collision is
+astronomically unlikely and, as far as I know, unprecendented.
+
