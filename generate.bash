@@ -1,10 +1,8 @@
-#!/bin/sh
+#!/usr/bin/env bash
 # SPDX-License-Identifier: CC0-1.0
 set -x
-readonly POSIXLY_CORRECT
-export POSIXLY_CORRECT
 f=./files/"$(printf '%s' "$1"|sha512sum -b -|tr -d ' *-')"
-if [ ! -f "$f" ]||[ "$(cat "$f")" = "$1" ]
+if [[ ! -f "$f" ]]||[[ "$(<"$f")" == "$1" ]]
 then printf '%s' "$1">"$f"
 else printf '%s' "$1">"$f"
 printf '%s\n' "$f">>./collisions.txt
