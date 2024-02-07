@@ -1,8 +1,6 @@
 #!/bin/sh
 # SPDX-License-Identifier: CC0-1.0
 set -x
-readonly POSIXLY_CORRECT
-export POSIXLY_CORRECT
 f=./files/"$(printf '%s' "$1"|sha512sum -b -|tr -d ' *-')"
 export f
 if [ ! -f "$f" ]||[ "$(cat "$f")" = "$1" ]
