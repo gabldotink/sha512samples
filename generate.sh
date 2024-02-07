@@ -4,6 +4,7 @@ set -x
 readonly POSIXLY_CORRECT
 export POSIXLY_CORRECT
 f=./files/"$(printf '%s' "$1"|sha512sum -b -|tr -d ' *-')"
+export f
 if [ ! -f "$f" ]||[ "$(cat "$f")" = "$1" ]
 then printf '%s' "$1">"$f"
 else printf '%s' "$1">"$f"

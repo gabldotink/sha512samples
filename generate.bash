@@ -2,6 +2,7 @@
 # SPDX-License-Identifier: CC0-1.0
 set -x
 f=./files/"$(printf '%s' "$1"|sha512sum -b -|tr -d ' *-')"
+export f
 if [[ ! -f "$f" ]]||[[ "$(<"$f")" == "$1" ]]
 then printf '%s' "$1">"$f"
 else printf '%s' "$1">"$f"
