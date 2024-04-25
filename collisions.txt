@@ -1,4 +1,4 @@
-SPDX-License-Identifier: CC0-1.0
+SPDX-License-Identifier: CC0-1.0 OR 0BSD
 
 This file contains SHA-512 hash collisions that have been
 found in this repository. The hashes are included below so
