@@ -1,11 +1,8 @@
 #!/bin/sh
-d="$1"
-export d
-f="./files/$(printf '%s' "$d"|sha512sum -b|tr -d ' *-')"
-export f
-if [ ! -f "$f" ]||[ "$(cat "$f")" = "$d" ]
-then printf '%s' "$d">"$f"
-else printf '%s' "$d">"$f"
+f="./files/$(printf '%s' "$1"|sha512sum -b|tr -d ' *-')"
+if [ ! -f "$f" ]||[ "$(cat "$f")" = "$1" ]
+then printf '%s' "$1">"$f"
+else printf '%s' "$1">"$f"
 printf '%s
 ' "$f">>./collisions.txt
 fi
